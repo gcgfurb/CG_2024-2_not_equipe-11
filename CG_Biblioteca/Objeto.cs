@@ -31,15 +31,11 @@ namespace CG_Biblioteca
     private int _vertexArrayObject;
 
     // BBox do objeto
-    private readonly BBox bBox = new();
-    public BBox Bbox()  //TODO: readonly
-    {
-      return bBox;
-    }
+    protected BBox bBox = new();
 
     // Transformações do objeto
-    private Transformacao4D matriz = new();
-    private static Transformacao4D matrizGlobal = new();
+    protected Transformacao4D matriz = new();
+    protected static Transformacao4D matrizGlobal = new();
 
 
     public Objeto(Objeto _paiRef, ref char _rotulo, Objeto objetoFilho = null)
