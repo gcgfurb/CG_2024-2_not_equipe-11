@@ -84,19 +84,14 @@ namespace gcgcg
             #endregion
 
             #region Objeto: Cubo
-            objetoSelecionado = new Cubo(mundo, ref rotuloNovo);
-            objetoSelecionado.shaderCor = _shaderTextura;
+            objetoSelecionado = new Cubo(mundo, ref rotuloNovo, true) { shaderCor = _shaderTextura };
             #endregion
 
             #region Objeto: ponto  
-            objetoSelecionado = new Cubo(mundo, ref rotuloNovo);
+            objetoSelecionado = new Cubo(mundo, ref rotuloNovo) { shaderCor = _shaderAmarela};
             objetoSelecionado.MatrizEscalaXYZBBox(0.2,0.2,0.2);
             objetoSelecionado.MatrizTranslacaoXYZ(3,0,0);
             #endregion
-
-            // objetoSelecionado.MatrizEscalaXYZ(0.2, 0.2, 0.2);
-
-            objetoSelecionado.shaderCor = _shaderAmarela;
 
             _camera = new Camera(Vector3.UnitZ * 5, ClientSize.X / (float)ClientSize.Y);
         }

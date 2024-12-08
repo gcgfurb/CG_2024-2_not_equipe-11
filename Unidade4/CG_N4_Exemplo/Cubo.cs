@@ -23,7 +23,7 @@ namespace gcgcg
         };
         // int[] colors;
 
-        public Cubo(Objeto _paiRef, ref char _rotulo) : base(_paiRef, ref _rotulo)
+        public Cubo(Objeto _paiRef, ref char _rotulo, bool textura = false) : base(_paiRef, ref _rotulo)
         {
             PrimitivaTipo = PrimitiveType.TriangleFan;
             PrimitivaTamanho = 10;
@@ -57,40 +57,102 @@ namespace gcgcg
             };
 
             // Frente (Z positivo)
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f)])
+                                                                {PrimitivaTamanho = 10, 
+                                                                PrimitivaTipo = PrimitiveType.TriangleFan,
+                                                                shaderCor = textura? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+            /*
             base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 0.0f));
             base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 0.0f));
             base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
             base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f));
+            */
 
             // Esquerda (X negativo)
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f)])
+            {
+                PrimitivaTamanho = 10,
+                PrimitivaTipo = PrimitiveType.TriangleFan,
+                shaderCor = textura ? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+            /*
             base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f));
             base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 0.0f));
             base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f));
             base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f));
+            */
 
             // Inferior (Y negativo)
-            base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f));
-            base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f)])
+            {
+                PrimitivaTamanho = 10,
+                PrimitivaTipo = PrimitiveType.TriangleFan,
+                shaderCor = textura ? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+
+            //base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f));
+            //base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
 
             // Direita (X positivo)
-            base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f)])
+            {
+                PrimitivaTamanho = 10,
+                PrimitivaTipo = PrimitiveType.TriangleFan,
+                shaderCor = textura ? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+
+            //base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, 1.0f, 1.0f, 1.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
 
             // Superior (Y positivo)
-            base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
-            base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f));
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f)])
+            {
+                PrimitivaTamanho = 10,
+                PrimitivaTipo = PrimitiveType.TriangleFan,
+                shaderCor = textura ? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+
+
+            //base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
+            //base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f));
 
             // Traseira (Z negativo)
-            base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f));
-            base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 1.0f));
-            base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
+            base.FilhoAdicionar(new Poligono(this, ref _rotulo, [new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 0.0f),
+                                                                new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 0.0f),
+                                                                new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f),
+                                                                new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 1.0f)])
+            {
+                PrimitivaTamanho = 10,
+                PrimitivaTipo = PrimitiveType.TriangleFan,
+                shaderCor = textura ? new Shader("Shaders/shaderTextura.vert", "Shaders/shaderTextura.frag") : new Shader("Shaders/shader.vert", "Shaders/shaderAmarela.frag")
+            });
+
+            //base.PontosAdicionar(new Ponto4D(-1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 0.0f));
+            //base.PontosAdicionar(new Ponto4D(1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 1.0f));
+            //base.PontosAdicionar(new Ponto4D(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 1.0f));
 
 
             /*

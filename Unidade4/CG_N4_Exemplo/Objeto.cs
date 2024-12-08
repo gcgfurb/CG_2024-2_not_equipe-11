@@ -22,7 +22,7 @@ namespace gcgcg
         private float primitivaTamanho = 1;
         public float PrimitivaTamanho { get => primitivaTamanho; set => primitivaTamanho = value; }
         private Shader _shaderObjeto = new Shader("Shaders/shader.vert", "Shaders/shaderBranca.frag");
-        public Shader shaderCor { set => _shaderObjeto = value; }
+        public Shader shaderCor { set => _shaderObjeto = value; get => _shaderObjeto; }
 
         // Vértices do objeto TODO: o objeto mundo deveria ter estes atributos abaixo?
         protected List<Ponto4D> pontosLista = new List<Ponto4D>();
@@ -94,7 +94,7 @@ namespace gcgcg
             GL.BindVertexArray(_vertexArrayObject);
             GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
-            GL.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3);
+            GL.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
             GL.EnableVertexAttribArray(1);
 
             bBox.Atualizar(matriz, pontosLista);
