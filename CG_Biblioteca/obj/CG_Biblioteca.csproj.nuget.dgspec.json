@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaoh\\OneDrive\\Área de Trabalho\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj": {}
+    "C:\\Users\\joaoh\\source\\repos\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaoh\\OneDrive\\Área de Trabalho\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj": {
+    "C:\\Users\\joaoh\\source\\repos\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaoh\\OneDrive\\Área de Trabalho\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\joaoh\\source\\repos\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj",
         "projectName": "CG_Biblioteca",
-        "projectPath": "C:\\Users\\joaoh\\OneDrive\\Área de Trabalho\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj",
+        "projectPath": "C:\\Users\\joaoh\\source\\repos\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\CG_Biblioteca.csproj",
         "packagesPath": "C:\\Users\\joaoh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaoh\\OneDrive\\Área de Trabalho\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\obj\\",
+        "outputPath": "C:\\Users\\joaoh\\source\\repos\\CG_2024-2_not_equipe-11\\CG_Biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
